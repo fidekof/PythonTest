@@ -1,0 +1,17 @@
+def run():
+    with open('numbers.txt', 'w') as f:
+        sequence = ''
+        for i in range(100):
+            sequence += str(i)
+            f.write(sequence + '\n')
+        f.close()
+
+    counter = 0
+    g = open('numbers.txt', 'r')
+    for line in g:
+        counter += line.count('101')
+    print('Encontramos {} repetido 101'.format(counter))
+
+
+if __name__ == '__main__':
+    run()
